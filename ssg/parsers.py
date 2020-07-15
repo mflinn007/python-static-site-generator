@@ -8,8 +8,8 @@ class Parser:
 
     extensions: List[str] = []
 
-    def valid_extensions(self, extensions):
-        return extensions in self.extensions
+    def valid_extension(self, extension):
+        return extension in self.extensions
 
     def parse(self, path: Path, source: Path, dest: Path):
         """To be implemented by a sub class"""
@@ -31,7 +31,7 @@ class Parser:
 
 
 class ResourceParser(Parser):
-    extensions = ['.jpg', '.png', '.git', '.css', '.html']
+    extensions = ['.jpg', '.png', '.gif', '.css', '.html']
 
     def parse(self, path, source, dest):
         self.copy(path, source, dest)
