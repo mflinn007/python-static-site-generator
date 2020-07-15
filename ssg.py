@@ -10,7 +10,7 @@ def main(source='content', dest='dist'):
               'dest': dest,
               'parsers': [ssg.parsers.ResourceParser(),
                           ssg.parsers.MarkdownParser(),
-                          ssg.parsers.ReStructuredTextParser]}
+                          ssg.parsers.ReStructuredTextParser()]}
 
     # This unpacks the dictionary... for some reason doesnt work when passing the individual values
     Site(**config).build()
